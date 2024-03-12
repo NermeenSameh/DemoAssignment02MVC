@@ -11,6 +11,8 @@ namespace DemoAssignment02MVC
 {
     public class Program
     {
+
+        // Entry Point 
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

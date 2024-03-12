@@ -16,6 +16,8 @@ namespace DemoAssignment02MVC
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();  // 1. Controller Activation
+                                        // 2. Add Require  Services (ActionFilters , ModelBinding) to the DI Container 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,6 +27,10 @@ namespace DemoAssignment02MVC
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseStatusCodePagesWithReExecute("/Home/Error");
+            }
 
             app.UseRouting();
 
@@ -32,8 +38,37 @@ namespace DemoAssignment02MVC
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello Worlds!");
+                    await context.Response.WriteAsync("Hello World!");
                 });
+
+                endpoints.MapGet("/Nermeen", async (context) =>
+                {
+                    await context.Response.WriteAsync("Hello Nermeen :)");
+                });
+
+                endpoints.MapControllerRoute(
+               name: "Default",
+              // pattern /*urlPath*/: "{controller}/{action}/{id?}",
+              // defaults : new {controller = "Movies" , action = "Index"}
+              pattern /*urlPath*/: "{controller=Movies}/{action=Index}/{id:int?}/{name:alpha?}"
+
+              
+
+               );
+
+                ///  endpoints.MapControllerRoute(
+                ///      name: "Default",
+                ///      pattern /*urlPath*/: "Movies/GetMovie/{id}"
+                ///
+                ///      );
+                ///
+                ///  endpoints.MapControllerRoute(
+                ///     name: "Other",
+                ///     pattern /*urlPath*/: "Product/GetProduct/{id}"
+                ///
+                ///   );
+
+
             });
         }
     }
