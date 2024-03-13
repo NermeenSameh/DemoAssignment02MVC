@@ -46,11 +46,12 @@ namespace DemoAssignment02MVC
                 {
                     await context.Response.WriteAsync("Hello Nermeen :)");
                 });
-                endpoints.MapGet("/BadRequest", async context =>
-                {
-                    context.Response.StatusCode = 400;
-                    new BadRequestObjectResult("Error");
-                });
+
+              ///  endpoints.MapGet("/BadRequest", async context =>
+              ///  {
+              ///      context.Response.StatusCode = 400;
+              ///      new BadRequestObjectResult("Error");
+              ///  });
 
                 endpoints.MapControllerRoute(
                name: "Default",
