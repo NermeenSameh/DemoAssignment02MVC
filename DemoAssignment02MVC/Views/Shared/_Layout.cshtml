@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" /> *@
+</head>
+<body>
+    @*Start Header *@
+    <header>
+        <nav class="mt-5">
+            <center>
+                <a href="/Home/Index" class="btn btn-primary">Home</a>
+                <a href="/Home/AboutUs" class="btn btn-warning">AboutUs</a>
+                <a href="/Home/Privacy" class="btn btn-success">Privacy</a>
+                <a href="/Home/ContactUs" class="btn btn-light">ContactUs</a>
+
+                <a href="/Accounts/Login" class="btn btn-danger">Login</a>
+                <a href="/Accounts/Register" class="btn btn-info">Register</a>
+            </center>
+        </nav>
+    </header>
+    @*End Header *@
+  
+    @*Start Body *@
+    <div>
+        @RenderBody()
+    </div>
+    @*End Body *@
+
+    @*Start Footer *@
+    <footer>
+        <center>
+            <div class="mt-3">
+                <p>Copyright &copy; for Route @DateTime.Now.Year</p>
+            </div>
+        </center>
+    </footer>
+    @*End Footer *@
+</body>
+</html>

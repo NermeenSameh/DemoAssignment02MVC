@@ -1,0 +1,38 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+    ViewBag.Title = "Regrister";
+}
+
+@*Start Body *@
+<section>
+
+    <center>
+        <div class="mt-5 p-5 bg-white text-dark rounded-2">
+            <h1>Welcome to Register Page</h1>
+
+            <form>
+                <div class="mb-3">
+                    <label for="UserNameInput" class="form-label">UserName</label>
+                    <input type="text" class="form-control" id="UserNameInput" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="Signup" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </center>
+</section>
+@*End Body *@
+
